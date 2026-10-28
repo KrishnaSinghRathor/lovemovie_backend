@@ -3,12 +3,12 @@ from dataclasses import dataclass, field
 
 
 def _origins():
-    return {o for o in os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",") if o}
+    return {o for o in os.getenv("ALLOWED_ORIGINS", "https://lovemovie-one.vercel.app").split(",") if o}
 
 
 @dataclass
 class Settings:
-    mongo_url: str = field(default_factory=lambda: os.getenv("MONGO_URL", "mongodb://localhost:27017"))
+    mongo_url: str = field(default_factory=lambda: os.getenv("MONGO_URL", "mongodb+srv://krishnakumpawat197_db_user:rK2lVHQAdHsgb0T6@cluster0.be7vlz4.mongodb.net"))
     db_name: str = field(default_factory=lambda: os.getenv("MONGO_DB", "synccinema"))
     storage_dir: str = field(default_factory=lambda: os.getenv("STORAGE_DIR", "./data/movies"))
     max_upload_bytes: int = field(default_factory=lambda: int(os.getenv("MAX_UPLOAD_BYTES", str(8 * 1024**3))))
