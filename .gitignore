@@ -1,0 +1,19 @@
+# Python virtual environments
+venv/
+.venv/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local movie storage
+data/movies/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
